@@ -64,13 +64,16 @@ class Sender {
       }
       return json;
     } catch (err) {
-      this.switchLoadingDisplay(false);
-
       console.error(err);
+      this.switchLoadingDisplay(false);
 
       setTimeout(() => {
         $error.innerText = err;
         $wrapperError.classList.add('active');
+
+        setTimeout(() => {
+          $wrapperError.classList.remove('active');
+        }, 5000);
       }, $wrapperError.classList.contains('active') ? 300 : 0);
 
       $wrapperSuccess.classList.remove('active');

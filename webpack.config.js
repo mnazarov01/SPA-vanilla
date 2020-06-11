@@ -11,7 +11,7 @@ const config = require('config');
 const isProd = process.env.NODE_ENV === 'production';
 const PUBLIC = '/public/';
 const PATH = !isProd ? 'dist/public' : 'dist/client';
-const SERVER_PATH = isProd ? 'dist/server' : 'dist/server';
+const SERVER_PATH = 'dist/server';
 
 const optimization = () => {
 

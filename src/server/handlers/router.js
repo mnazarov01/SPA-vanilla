@@ -126,6 +126,10 @@ module.exports = (autoIncrement) => {
     try {
       order = await models.order.findOne({ _id: QUERY.id }, '-__v')
         .populate('city_from city_to', '-_id -__v');
+      if (!order) {
+        order = {};
+        throw new Error('Такого заказа не существует');
+      }
     } catch (e) {
       order.error = e.message;
     }

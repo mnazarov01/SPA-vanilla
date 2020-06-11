@@ -22,13 +22,14 @@ export default {
     await this.renderOrder();
   },
   async renderOrder() {
+    const WRAPPER = document.querySelector('.viewer_wrapper');
     const ID = urlParser.getParam('id');
+
     const ORDER = await SENDER.getDataFromServer(undefined, 'GET', `?id=${ID}`);
     if (ORDER.errors) {
+      WRAPPER.innerHTML = page404.render();
       return;
     }
-
-    const WRAPPER = document.querySelector('.viewer_wrapper');
 
     const bildNodes = (wrapper, order) => {
       const DETAIL = order.detail.split(',').reduce((acc, v) => acc += `<span>${v}</span>`, '');
@@ -65,7 +66,6 @@ export default {
     while (WRAPPER.firstChild) {
       WRAPPER.removeChild(WRAPPER.firstChild);
     }
-
 
     bildNodes(WRAPPER, ORDER);
     WRAPPER.style.display = 'flex';
