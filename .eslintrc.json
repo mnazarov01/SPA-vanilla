@@ -1,0 +1,27 @@
+{ 
+    "extends": "airbnb",   
+    "env": {
+        "browser": true,
+        "es6": true,
+        "node": true
+    },
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
+    },
+    "parser": "babel-eslint",
+    "rules": {
+        "global-require": 0,
+        "no-restricted-globals": 0,
+        "no-console": 0, 
+        "allowForLoopAfterthoughts": 0,
+        "no-underscore-dangle": 0,
+        "no-param-reassign": 0,
+        "no-return-assign": 0,
+        "import/no-cycle": 0,
+        "no-undef": 0,
+        "no-unused-vars": 0,
+        "func-names": 0,
+        "linebreak-style": 0
+    }
+}

@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.vscode
+jest.config.js
+babel.config.js
+webpack.config.js
+package.json
