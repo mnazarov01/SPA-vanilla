@@ -1,6 +1,0 @@
-extraction:
-    javascript:
-      index:
-        filetypes:
-          ".jsm": "js"
-          ".tmpl": "html"

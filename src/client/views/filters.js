@@ -99,12 +99,12 @@ export default {
     `,
   afterRender() {
     Filter.sortRediraction();
-    const FILTER = new Filter(
+    const ignore = new Filter(
       { inputId: 'input-filter-from', inputUl: 'input-filter-from-search', inputClearId: 'input-filter-from-clear' },
       { inputId: 'input-filter-to', inputUl: 'input-filter-to-search', inputClearId: 'input-filter-to-clear' },
       'input-filter-search',
       { nodeId: 'sorter', mainLabelId: 'sorter_main_label', mainInputId: 'filter_main_input' },
       'filter_search_button',
-    ); // lgtm [js/unused-local-variable]
+    );
   },
 };

@@ -66,12 +66,9 @@ export default {
       WRAPPER.removeChild(WRAPPER.firstChild);
     }
 
-    if (ORDER) {
-      bildNodes(WRAPPER, ORDER);
-      WRAPPER.style.display = 'flex';
-    } else {
-      WRAPPER.innerHTML = page404.render();
-    }
+
+    bildNodes(WRAPPER, ORDER);
+    WRAPPER.style.display = 'flex';
   },
 
   preRender: () => { },
