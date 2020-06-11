@@ -24,7 +24,7 @@ Run the command
 $ npm install
 ```
 
-### After install in your app directory, and edit the default config file.
+### After the installation in your app directory, and edit the default config file.
 
 ```
 $ mkdir config
