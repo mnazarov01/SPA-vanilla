@@ -1,7 +1,5 @@
 import { enableMocks, disableMocks } from 'jest-fetch-mock';
-import html from './html';
 import Sender from '../src/client/handlers/sender';
-
 
 describe('Sender: ', () => {
   let sender;
