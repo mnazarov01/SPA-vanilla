@@ -1570,8 +1570,7 @@ body {
 		background-color: #55311c;
 	}
 	
-	.navbar-item:hover,
-	.navbar-item:focus {
+	.navbar-item:hover {
 		color: #929292;
 	}
 	

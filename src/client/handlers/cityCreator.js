@@ -47,6 +47,7 @@ class CityCreator {
           window.dispatchEvent(eventCreatedNewCity);
           this.inputNewCity.value = '';
           this.inputNewCityCountry.value = '';
+          this.inputNewCity.focus();
         }
 
         setTimeout(() => {

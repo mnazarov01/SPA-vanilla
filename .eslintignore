@@ -1,5 +1,7 @@
 node_modules/
 dist/
+# __test__/
+# __mocha__/
 .vscode
 jest.config.js
 babel.config.js

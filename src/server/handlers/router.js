@@ -87,6 +87,23 @@ module.exports = (autoIncrement) => {
     res.send(JSON.stringify(cities));
   });
 
+  router.get('/api/order', async (req, res) => {
+    const QUERY = getFormattedQuery(req.query);
+    let order = {};
+
+    try {
+      order = await models.order.findOne({ _id: QUERY.id }, '-__v')
+        .populate('city_from city_to', '-_id -__v');
+      if (!order) {
+        order = {};
+        throw new Error('Такого заказа не существует');
+      }
+    } catch (e) {
+      order.error = e.message;
+    }
+    res.send(JSON.stringify(order));
+  });
+
   router.get('/api/cities-list', async (req, res) => {
     const QUERY = getFormattedQuery(req.query);
     const RESULT = {};
@@ -117,23 +134,6 @@ module.exports = (autoIncrement) => {
       RESULT.error = e.message;
     }
     res.send(JSON.stringify(RESULT));
-  });
-
-  router.get('/api/order', async (req, res) => {
-    const QUERY = getFormattedQuery(req.query);
-    let order = {};
-
-    try {
-      order = await models.order.findOne({ _id: QUERY.id }, '-__v')
-        .populate('city_from city_to', '-_id -__v');
-      if (!order) {
-        order = {};
-        throw new Error('Такого заказа не существует');
-      }
-    } catch (e) {
-      order.error = e.message;
-    }
-    res.send(JSON.stringify(order));
   });
 
   router.get('/api/orders_list', async (req, res) => {
