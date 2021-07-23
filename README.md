@@ -1,4 +1,4 @@
-# BIA-SPA
+# SPA-vanilla
 
 [![DeepScan grade](https://deepscan.io/api/teams/9685/projects/12275/branches/187665/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=9685&pid=12275&bid=187665) [![Build Status](https://travis-ci.org/mnazarov01/BIA-SPA.svg?branch=master)](https://travis-ci.org/mnazarov01/BIA-SPA)
 
